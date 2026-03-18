@@ -1,0 +1,29 @@
+# Include CMake files
+include CMakeLists.txt
+include *.sh
+
+# Include source files
+recursive-include src *.cpp *.cu *.h
+recursive-include include *.h
+
+# Include Python files
+recursive-include python *.py
+recursive-include python *.pyi
+include py.typed
+
+# Include documentation
+include README.md
+include LICENSE
+include *.md
+
+# Include test files
+recursive-include tests *.py
+
+# Exclude build artifacts
+global-exclude *.pyc
+global-exclude *.pyo
+global-exclude __pycache__
+global-exclude *.so
+global-exclude *.ptx
+global-exclude build
+global-exclude dist

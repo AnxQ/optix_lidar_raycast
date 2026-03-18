@@ -1,0 +1,29 @@
+# Python cache / packaging
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.eggs/
+*.egg-info/
+dist/
+build/
+
+# Compiled artifacts
+*.so
+*.ptx
+
+# CMake / Make / Ninja outputs
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Local outputs
+output/
