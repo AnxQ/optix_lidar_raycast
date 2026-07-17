@@ -43,6 +43,8 @@ class CMakeBuild(build_ext):
     
     def build_extension(self, ext):
         """Build a single extension using CMake."""
+        import pybind11
+
         extdir = os.path.abspath(os.path.dirname(self.get_ext_fullpath(ext.name)))
         
         # Create build directory
@@ -52,7 +54,8 @@ class CMakeBuild(build_ext):
         # CMake configuration arguments
         cmake_args = [
             f'-DCMAKE_LIBRARY_OUTPUT_DIRECTORY={extdir}',
-            f'-DPYTHON_EXECUTABLE={sys.executable}',
+            f'-DPython3_EXECUTABLE={sys.executable}',
+            f'-Dpybind11_DIR={pybind11.get_cmake_dir()}',
             '-DCMAKE_BUILD_TYPE=Release',
         ]
         
